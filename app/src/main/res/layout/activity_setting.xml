@@ -10,4 +10,135 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.quanh.brbd.Setting">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=" Settings"
+        android:id="@+id/textView8"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor2"
+        android:layout_width="match_parent"
+        android:layout_height= "2dp"
+        android:layout_marginTop="30dp"
+        android:background="#dad3d3" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_keyboard_backspace_white_24dp"
+        android:background="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Edit User Profile"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/SplitLine_hor2"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton"
+        android:layout_marginTop="32dp"
+        android:textSize="20dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor3"
+        android:layout_width="300dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Change Password"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/SplitLine_hor3"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_marginTop="67dp"
+        android:textSize="20dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor4"
+        android:layout_width="300dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Clear History Search"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/SplitLine_hor4"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_marginTop="75dp"
+        android:textSize="20dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor5"
+        android:layout_width="300dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView11"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Sign  Out"
+        android:id="@+id/textView12"
+        android:layout_below="@+id/SplitLine_hor5"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_marginTop="74dp"
+        android:textSize="20dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor6"
+        android:layout_width="300dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView12"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="About Us"
+        android:id="@+id/textView13"
+        android:layout_marginTop="455dp"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12"
+        android:textSize="20dp"
+        />
+
+    <View
+        android:id="@+id/SplitLine_hor7"
+        android:layout_width="300dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView13"
+        android:layout_centerHorizontal="true"
+        />
+
 </RelativeLayout>
