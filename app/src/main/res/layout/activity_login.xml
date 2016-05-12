@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:text="LOG IN"
         android:id="@+id/button"
+        android:onClick="Login"
         android:layout_below="@+id/editText3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"/>
