@@ -1,26 +1,32 @@
 package com.quanh.brbd;
 
-import android.app.Application;
-import android.content.Context;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import com.quanh.object.User;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.sql.PreparedStatement;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
-    private static String SOAP_ACTION2 = "http://ws/BookizeWS/RegisterRequest";
-    private static String SOAP_ACTION1 = "http://ws/BookizeWS/LoginRequest";
-    private static String SOAP_ACTION3 = "http://ws/BookizeWS/helloRequest";
-    private static String NAMESPACE = "http://ws/";
-    private static String METHOD_NAME1 = "Login";
-    private static String METHOD_NAME2 = "Register";
-    private static String URL = "http://localhost:8080/Bookize/BookizeWS?wsdl";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,38 +34,60 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    public void Login(View view){
-        SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME1);
 
-        //Use this to add parameters
-        //request.addProperty("Fahrenheit",txtFar.getText().toString());
+    public void Login(View view) {
+        final String username = ((EditText) findViewById(R.id.editText2)).getText().toString();
+        new AsyncTask<String, Void, String>() {
+            @Override
+            protected void onPreExecute() {
 
-        //Declare the version of the SOAP request
-        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-
-        envelope.setOutputSoapObject(request);
-        envelope.dotNet = true;
-
-        try {
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-
-            //this is the actual part that will call the webservice
-            androidHttpTransport.call(SOAP_ACTION1, envelope);
-
-            // Get the SoapResult from the envelope body.
-            SoapObject result = (SoapObject)envelope.bodyIn;
-
-            if(result != null)
-            {
-                //Get the first property and change the label text
-                ((TextView)findViewById()).setText(result.getProperty(0).toString());
             }
-            else
-            {
-                //Toast.makeText(, "No Response",Toast.LENGTH_LONG).show();
+
+            @Override
+            protected String doInBackground(String... params) {
+                String realUrl = "http://192.168.2.3:8080/BookizeWS/webresources/obj.userinfo/" + username;
+                return JsonHelper.requestContent(realUrl);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+
+            @Override
+            protected void onPostExecute(String res) {
+                ArrayList<User> result = new ArrayList<User>();
+
+                try {
+                    JSONObject js_user = new JSONObject(res);
+                    User user = null;
+                    user = new User(
+                            js_user.getString("userID"),
+                            js_user.getString("password"),
+                            js_user.getString("name"),
+                            js_user.getString("avatar"),
+                            js_user.getString("email"),
+                            js_user.getString("about")
+                    );
+
+                    if (user.getPassword().equals(((EditText) findViewById(R.id.editText3)).getText().toString())) {
+                        AccountManager.getInstance().setLoggedin(true);
+                        AccountManager.getInstance().setCurrentUser(user);
+                        ((TextView) findViewById(R.id.textView6)).setText("LoggedIn");
+                    }
+                    //result.add(user);
+
+                } catch (JSONException e1) {
+                    // manage exceptions
+                    System.out.println(e1.getMessage());
+                    ((TextView) findViewById(R.id.textView6)).setText("Failed");
+                    e1.printStackTrace();
+                }
+
+
+            // dismiss progress dialog
+            // Utils.dismissDialog(mDialog);
         }
+
     }
+
+    .
+
+    executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR); // we target SDK > API 11
+}
 }
