@@ -7,6 +7,7 @@
 package com.quanh.object;
 
 import java.sql.Time;
+import java.util.Date;
 
 /**
  *
@@ -19,13 +20,13 @@ public class Post {
     int star;
     String content;
     String image;
-    Time postTime;
+    Date postTime;
     int mainPost; 
     
     public Post() {
     }
 
-    public Post(int postId, String userId, String bookName, int star, String content, String image, Time postTime) {
+    public Post(int postId, String userId, String bookName, int star, String content, String image, Date postTime) {
         this.postId = postId;
         this.userId = userId;
         this.bookName = bookName;
@@ -95,7 +96,7 @@ public class Post {
         return star;
     }
 
-    public Time getPostTime() {
+    public Date getPostTime() {
         return postTime;
     }
 
@@ -107,7 +108,7 @@ public class Post {
         this.star = star;
     }
 
-    public void setPostTime(Time postTime) {
+    public void setPostTime(Date postTime) {
         this.postTime = postTime;
     }
     

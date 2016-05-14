@@ -1,6 +1,7 @@
 package com.quanh.brbd;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -36,7 +38,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void Login(View view) {
-        final String username = ((EditText) findViewById(R.id.editText2)).getText().toString();
+        TextView tv_username = ((EditText) findViewById(R.id.editText2));
+        final String username = tv_username==null?"":tv_username.getText().toString();
+        if(username!="")
         new AsyncTask<String, Void, String>() {
             @Override
             protected void onPreExecute() {
@@ -51,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(String res) {
-                ArrayList<User> result = new ArrayList<User>();
 
                 try {
                     JSONObject js_user = new JSONObject(res);
@@ -68,14 +71,16 @@ public class LoginActivity extends AppCompatActivity {
                     if (user.getPassword().equals(((EditText) findViewById(R.id.editText3)).getText().toString())) {
                         AccountManager.getInstance().setLoggedin(true);
                         AccountManager.getInstance().setCurrentUser(user);
-                        ((TextView) findViewById(R.id.textView6)).setText("LoggedIn");
+                        Intent intent = new Intent(LoginActivity.this, UserProfile.class);
+
+                        startActivity(intent);
                     }
                     //result.add(user);
 
                 } catch (JSONException e1) {
                     // manage exceptions
                     System.out.println(e1.getMessage());
-                    ((TextView) findViewById(R.id.textView6)).setText("Failed");
+                    Toast.makeText(getApplicationContext(), "Login failed", Toast.LENGTH_LONG).show();
                     e1.printStackTrace();
                 }
 
