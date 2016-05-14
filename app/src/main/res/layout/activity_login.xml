@@ -31,8 +31,7 @@
         android:hint="Username"
         android:textColorHighlight="#7eff15"
         android:textColorHint="#256eff"
-        android:fontFamily="sans-serif"
-        />
+        android:fontFamily="sans-serif"/>
 
     <EditText
         android:layout_width="250dp"
@@ -79,8 +78,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Don't have an account? Sign up"
-        android:textColor="#FFFFFFFF"
-        android:background="#FF000000"
+        android:textColor="#8392e6"
+        android:background="#ffffff"
+        android:fontFamily="sans-serif"
         />
 
 </RelativeLayout>

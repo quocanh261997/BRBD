@@ -37,8 +37,9 @@
         android:layout_alignBottom="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/ic_keyboard_backspace_white_24dp"
-        android:background="#000000"/>
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:background="#fafafa"
+        />
 
     <TextView
         android:layout_width="wrap_content"

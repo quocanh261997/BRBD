@@ -27,7 +27,11 @@
         </activity>
         <activity android:name=".Register">
         </activity>
-        <activity android:name=".Setting">
+        <activity android:name="com.quanh.MainActivity" android:label="SlidingMenu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
