@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.quanh.brbd.Menu">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:background="#fafafa"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="MAIN MENU"
+        android:id="@+id/textView14"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor9"
+        android:layout_width="350dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="HOME"
+        android:id="@+id/textView15"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/SplitLine_hor9"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/SplitLine_hor10"
+        android:layout_width="150dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SETTINGS"
+        android:id="@+id/textView16"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/SplitLine_hor10"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/SplitLine_hor11"
+        android:layout_width="150dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView16"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="REVIEW"
+        android:id="@+id/textView17"
+        android:layout_below="@+id/SplitLine_hor11"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"/>
+
+    <View
+        android:id="@+id/SplitLine_hor12"
+        android:layout_width="150dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView17"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="LOG OUT"
+        android:id="@+id/textView18"
+        android:layout_marginTop="74dp"
+        android:layout_below="@+id/SplitLine_hor12"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/SplitLine_hor13"
+        android:layout_width="150dp"
+        android:layout_height= "1dp"
+        android:background="#dad3d3"
+        android:layout_below="@+id/textView18"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/ic_exit_to_app_black_18dp"
+        android:layout_above="@+id/SplitLine_hor13"
+        android:layout_alignRight="@+id/SplitLine_hor13"
+        android:layout_alignEnd="@+id/SplitLine_hor13"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/ic_content_copy_black_18dp"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_alignRight="@+id/SplitLine_hor12"
+        android:layout_alignEnd="@+id/SplitLine_hor12"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:src="@drawable/ic_settings_black_18dp"
+        android:layout_above="@+id/textView17"
+        android:layout_alignRight="@+id/SplitLine_hor11"
+        android:layout_alignEnd="@+id/SplitLine_hor11"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView5"
+        android:layout_alignBottom="@+id/SplitLine_hor10"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:src="@drawable/ic_home_black_18dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView6"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textView14"
+        android:layout_toStartOf="@+id/textView14"
+        android:layout_marginBottom="55dp"
+        android:background="@color/colorAccent"/>
+
+
+</RelativeLayout>
